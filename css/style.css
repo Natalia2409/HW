@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../img/bg.jpg") center center/cover no-repeat;
+}
+
+h1, h2 {
+    margin: 40px 0 20px 20px;
+    color: #242222;
+}
+
+p {
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+div {
+    margin: 70px 0 0 70px;
+    max-width: 700px;
+    background-color: #e3bfbc;
+    color: #fa1f0c;
+}
