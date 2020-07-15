@@ -1,47 +1,44 @@
 'use strict'
 
-let priceOfApples = 15.678;
-let priceOfOranges = 123.965;
-let priceOfCherries = 90.2345;
+const priceOfApples = 15.678;
+const priceOfOranges = 123.965;
+const priceOfCherries = 90.2345;
 
 document.writeln(`<p>Максимальна ціна продуктів: ${Math.max(priceOfApples, priceOfOranges, priceOfCherries)};</p>`);
 
 document.writeln(`<p>Мінімальна ціна продуктів: ${Math.min(priceOfApples, priceOfOranges, priceOfCherries)};</p>`);
 
-let sumOfPrices = priceOfApples + priceOfOranges + priceOfCherries;
+const sumOfPrices = priceOfApples + priceOfOranges + priceOfCherries;
 document.writeln(`<p>Сума всіх товарів: ${sumOfPrices};</p>`);
 
-let roundedPrice = Math.floor(priceOfApples) + Math.floor(priceOfOranges) + Math.floor(priceOfCherries);
+const roundedPrice = Math.floor(priceOfApples) + Math.floor(priceOfOranges) + Math.floor(priceOfCherries);
 document.writeln(`<p>Заокруглена сума усіх товарів: ${roundedPrice};</p>`);
 
-let roundToHundred = Math.round(roundedPrice/100)*100;
+const roundToHundred = Math.round(roundedPrice/100)*100;
 document.writeln(`<p>Сума товарів округлена до сотень: ${roundToHundred};</p>`);
 
-if (roundedPrice % 2 == 0) {
-    document.writeln('<p>Сума усіх товарів є: парним числом;</p>');
-} else {
-    document.writeln('<p>Сума усіх товарів є: непарним числом;</p>');
-}
+const isEven = (roundedPrice % 2 == 0) ? "true" : "false";
+document.writeln(`<p>Чи парна сума усіх товарів?: ${isEven};</p>`);
 
-let clientPayment = 500;
-let restOfPayment = clientPayment - sumOfPrices;
+const clientPayment = 500;
+const restOfPayment = clientPayment - sumOfPrices;
 document.writeln(`<p>Сума решти: ${restOfPayment};</p>`);
 
-let averagePrice = (sumOfPrices/3).toFixed(2);
+const averagePrice = (sumOfPrices/3).toFixed(2);
 document.writeln(`<p>Середнє значення цін (округлене до другого знаку після коми): ${averagePrice};</p>`);
 
-let randomDiscount = Math.round(Math.random()*100);
+const randomDiscount = Math.round(Math.random()*100);
 document.writeln(`<p>Випадкова знижка: ${randomDiscount}%;</p>`);
 
-let sumWithDiscount = (sumOfPrices - (sumOfPrices*(randomDiscount/100))).toFixed(2);
+const sumWithDiscount = (sumOfPrices - (sumOfPrices*(randomDiscount/100))).toFixed(2);
 document.writeln(`<p>Сума зі знижкою: ${sumWithDiscount};</p>`);
 
-let profit = (sumOfPrices/2 - (sumOfPrices - sumWithDiscount)).toFixed(2);
+const profit = (sumOfPrices/2 - (sumOfPrices - sumWithDiscount)).toFixed(2);
 document.writeln(`<p>Прибуток складає: ${profit};</p>`);
 
 
 
-let div = document.createElement('div');
+const div = document.createElement('div');
 div.innerHTML = `
     <h2>ADVANCED</h2>
     <p>Максимальна ціна продуктів: ${Math.max(priceOfApples, priceOfOranges, priceOfCherries)};</p>
@@ -49,7 +46,7 @@ div.innerHTML = `
     <p>Сума всіх товарів: ${sumOfPrices};</p>
     <p>Заокруглена сума усіх товарів: ${roundedPrice};</p>
     <p>Сума товарів округлена до сотень: ${roundToHundred};</p>
-    <p>Сума усіх товарів є: парним числом;</p>
+    <p>Чи парна сума усіх товарів?: ${isEven};</p>
     <p>Сума решти: ${restOfPayment};</p>
     <p>Середнє значення цін (округлене до другого знаку після коми): ${averagePrice};</p>
     <p>Випадкова знижка: ${randomDiscount}%;</p>
@@ -57,3 +54,4 @@ div.innerHTML = `
     <p>Прибуток складає: ${profit};</p>
 `;
 document.body.append(div);
+
