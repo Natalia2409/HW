@@ -1,5 +1,3 @@
-'use strict'
-
 const priceOfApples = 15.678;
 const priceOfOranges = 123.965;
 const priceOfCherries = 90.2345;
@@ -14,7 +12,7 @@ document.writeln(`<p>Сума всіх товарів: ${sumOfPrices};</p>`);
 const roundedPrice = Math.floor(priceOfApples) + Math.floor(priceOfOranges) + Math.floor(priceOfCherries);
 document.writeln(`<p>Заокруглена сума усіх товарів: ${roundedPrice};</p>`);
 
-const roundToHundred = Math.round(roundedPrice/100)*100;
+const roundToHundred = Math.ceil(roundedPrice/100)*100;
 document.writeln(`<p>Сума товарів округлена до сотень: ${roundToHundred};</p>`);
 
 const isEven = (roundedPrice % 2 == 0) ? "true" : "false";
